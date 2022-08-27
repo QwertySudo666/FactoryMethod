@@ -1,7 +1,13 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import entity.CoffeeType
+import factory.CoffeeFactory
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    val coffeeFactory = CoffeeFactory()
+    val latte = coffeeFactory.makeCoffee(CoffeeType.LATTE)
+    val espresso = coffeeFactory.makeCoffee(CoffeeType.ESPRESSO)
+    val americano = coffeeFactory.makeCoffee(CoffeeType.AMERICANO)
+
+    println("You are drinking ${latte.getCoffeeName()}")
+    println("You are drinking ${espresso.getCoffeeName()}")
+    println("You are drinking ${americano.getCoffeeName()}")
 }
